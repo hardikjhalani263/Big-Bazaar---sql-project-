@@ -27,6 +27,9 @@ ORDER BY total_sales DESC;
 ```
 result 
 
+This query helps the business understand which item categories generate the most revenue and how much, on average, each item sells.
+It identifies top-performing item types, highlights low-selling categories, and supports decisions on inventory planning, promotions, and pricing strategy.
+
 ## 2. Total number of items sold per Outlet_Location_Type
 ```mysql
 SELECT
@@ -37,6 +40,10 @@ GROUP BY Outlet_Location_Type
 ORDER BY total_weight DESC;
 ```
 result
+
+This query shows which outlet locations handle the highest volume of products by total item weight.
+It helps the business understand demand patterns across different locations, so they can make better decisions about stock distribution, logistics planning, and resource allocation.
+
 ## 3.Max, min, avg Item_Outlet_Sales for each Outlet_Type
 ```mysql
 SELECT 
@@ -48,6 +55,11 @@ FROM big_bazaar
 GROUP BY outlet_type
 ORDER BY AVG(total_sales) DESC;
 ```
+result
+
+This query helps compare sales performance across different outlet types by showing their minimum, maximum, and average sales.
+It allows the business to identify high-performing outlet formats, detect underperforming ones, and make decisions on investment, improvements, or expansion based on outlet performance trends.
+
 ## 4.Top 5 outlets with highest total revenue
 ```mysql
 SELECT
@@ -58,6 +70,12 @@ GROUP BY Outlet_Identifier
 ORDER BY total_revenue DESC
 LIMIT 5;
 ```
+
+result 
+
+This query identifies the top 5 outlets generating the highest revenue.
+It helps the business focus on best-performing stores, understand what drives their success, and use those insights for strategy, resource allocation, and expansion planning.
+
 ## 5. Percentage contribution of each Item_Type to total sales
 ```mysql
 SELECT Item_Type,
@@ -67,6 +85,12 @@ FROM big_bazaar
 GROUP BY Item_Type
 ORDER BY total_sales DESC;
 ```
+
+result 
+
+This query shows how much each item category contributes to the company’s total sales.
+It helps the business identify which product types drive revenue, prioritize high-impact categories, and decide where to focus marketing, inventory, and shelf space for maximum profit.
+
 ## 6 . Records where Item_Visibility > average visibility
 ```mysql 
 SELECT *
@@ -74,6 +98,7 @@ FROM big_bazaar
 WHERE Item_Visibility > (SELECT AVG(Item_Visibility) FROM big_bazaar);
 ```
 ## 7. Items sold in multiple item types
+top 10 
 ```mysql
 select item_identifier , item_type , count(item_type) as outlet_type
 from blinkit_grocery 
@@ -81,3 +106,21 @@ group by item_identifier , item_type
 HAVING COUNT(DISTINCT Outlet_Type) > 1
 order by outlet_type desc
 limit 10 ;
+```
+
+below 10 
+
+```
+select item_identifier , item_type , count(item_type) as outlet_type
+from blinkit_grocery 
+group by item_identifier , item_type
+HAVING COUNT(DISTINCT Outlet_Type) > 1
+order by outlet_type desc
+limit 10 ;
+```
+
+result
+
+This query identifies items that are sold across multiple outlet types.
+It helps the business understand which products are widely distributed, have broad market demand, and may require priority stocking, consistent pricing, and wider availability across outlets.
+
