@@ -7,7 +7,7 @@
 
 [SQL Analysis (Code)](https://github.com/hardikjhalani263/Big-Bazaar---sql-project-/blob/main/big%20bazaar%20script.sql)
 
-[smart Bazaar Dashboard - Power Bi](https://github.com/hardikjhalani263/Big-Bazaar---sql-project-/blob/main/Big%20Bazaar%20Dashbord.png)
+[smart Bazaar Dashboard - Power Bi](https://github.com/hardikjhalani263/smart-Bazaar---sql-project-/blob/main/Screenshot%202025-12-12%20005653.png)
 
 - **Business Problem:** These queries together help solve the major business problem of improving sales, optimizing inventory, identifying top-performing products/outlets, understanding customer demand, and making better strategic decisions across stores and product categories.
 
